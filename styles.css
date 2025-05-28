@@ -1,82 +1,189 @@
-/* Reset CSS */
-* {
+body {
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
-/* Style header */
 header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
     background-color: #333;
     color: #fff;
-    padding: 20px;
-    text-align: center;
 }
 
-header h1 {
-    margin-bottom: 10px;
-}
-nav ul {
-    list-style-type: none;
+.logo img {
+    height: 50px;
 }
 
-nav ul li {
-    display: inline;
-    margin-right: 20px;
+.main-navigation ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+.main-navigation ul li {
+    position: relative;
 }
 
-nav ul li a {
+.main-navigation ul li a {
     color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    display: block;
+}
+
+.main-navigation ul li ul.dropdown {
+    display: none;
+    position: absolute;
+    background-color: #444;
+    top: 100%;
+    left: 0;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.main-navigation ul li:hover ul.dropdown {
+    display: block;
+}
+
+.search-bar {
+    display: flex;
+}
+
+.search-bar input {
+    padding: 5px;
+    border: none;
+}
+
+.search-bar button {
+    padding: 5px 10px;
+    border: none;
+    background-color: #555;
+    color: #fff;
+}
+
+.user-links a {
+    color: #fff;
+    margin-left: 20px;
     text-decoration: none;
 }
 
-/* Style produk */
-.products {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    padding: 20px;
-}
-
-.products article {
-    background-color: #f9f9f9;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
-    padding: 20px;
-    text-align: center;
-    width: 200px;
-}
-
-.products article img {
-    max-width: 100%;
-}
-
-.products article h2 {
-    margin-top: 10px;
-}
-
-.products article p {
-    margin-top: 5px;
-}
-.products article button {
-    background-color: #007bff;
-    border: none;
-    border-radius: 5px;
-    color: #fff;
-    cursor: pointer;
+.breadcrumbs {
     padding: 10px 20px;
-    transition: background-color 0.3s;
+    background-color: #f5f5f5;
+}
+.breadcrumbs a {
+    text-decoration: none;
+    color: #333;
 }
 
-.products article button:hover {
-    background-color: #0056b3;
+main {
+    display: flex;
+    padding: 20px;
 }
 
-/* Style footer */
+.sidebar {
+    width: 25%;
+    padding: 20px;
+    background-color: #f5f5f5;
+}
+
+.product-list {
+    width: 75%;
+    padding: 20px;
+}
+
 footer {
     background-color: #333;
     color: #fff;
     padding: 20px;
-    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.footer-nav, .newsletter-signup, .social-media, .payment-methods {
+    margin-bottom: 20px;
+}
+
+.footer-nav a, .social-media a {
+    color: #fff;
+    text-decoration: none;
+    margin-right: 20px;
+}
+
+.newsletter-signup form {
+    display: flex;
+}
+.newsletter-signup input {
+    padding: 5px;
+    border: none;
+    margin-right: 10px;
+}
+
+.newsletter-signup button {
+    padding: 5px 10px;
+    border: none;
+    background-color: #555;
+    color: #fff;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .main-navigation ul {
+        flex-direction: column;
+        width: 100%;
+    }
+ .main-navigation ul li a {
+        padding: 10px;
+    }
+
+    .search-bar {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .search-bar input {
+        flex-grow: 1;
+    }
+
+    .user-links {
+        margin-top: 10px;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+main {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .product-list {
+        width: 100%;
+    }
+
+    footer {
+        flex-direction: column;
+        align-items: center;
+    }
+.footer-nav, .newsletter-signup, .social-media, .payment-methods {
+        width: 100%;
+        text-align: center;
+    }
+
+    .footer-nav a, .social-media a {
+        margin: 10px;
+    }
 }
